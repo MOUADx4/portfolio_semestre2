@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+    transition: all 0.2s linear;
+    text-decoration: none;
+    border: none;
+}
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 7em;
+    scroll-behavior: smooth;
+}
+body {
+    position: relative;
+}
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 20;
+    background-color: #3b3838;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 8%;
+    height: 50px;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+}
+header .logo {
+    color: #8f03c7;
+    font-size: 25px;
+    font-weight: bold;
+}
+header .logo span {
+    color: #000;
+}
+.menu {
+    display: flex;
+}
+.menu li {
+    list-style: none;
+    margin: 0 15px;
+}
+.menu li a {
+    font-size: 14px;
+    color: #fff;
+    font-weight: 300;
+    transition: 0.2s;
+}
+.menu li a:hover {
+    color: #8f03c7;
+}
+.menu_toggle {
+    display: none;
+}
+header button {
+    background-color: #8f03c7;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #fff;
+    padding: 5px 25px;
+}
+@media (max-width: 682px) {
+    header {
+        padding: 0 10px;
+    }
+    header .menu {
+        display: none;
+    }
+    .menu_toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+    .menu_toggle span {
+        width: 35px;
+        height: 5px;
+        background-color: #8f03c7;
+        border-radius: 6px;
+        transition: 0.5s;
+    }
+    .menu_toggle span.active {
+        width: 0;
+    }
+    .menu_toggle::before,
+    .menu_toggle::after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 5px;
+        background-color: #8f03c7;
+        border-radius: 6px;
+        transition: 0.5s;
+    }
+    .menu_toggle::before {
+        transform: translateY(10px);
+    }
+    .menu_toggle::after {
+        transform: translateY(-10px);
+    }
+    .menu_toggle.active::before {
+        width: 28px;
+        transform: rotate(45deg);
+    }
+    .menu_toggle.active::after {
+        width: 28px;
+        transform: rotate(-45deg);
+    }
+    header .menu.responsive {
+        position: absolute;
+        top: 50px;
+        left: 0;
+        display: flex;
+        width: 100%;
+        height: 50px;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        background-color: #fff;
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+    }
+}
+
